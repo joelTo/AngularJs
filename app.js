@@ -6,9 +6,12 @@ angular.module('app', [])
 
 .controller('MyFirstController',function() {
     console.log('MyFirstController');
+    
     this.users = [
         {
             name: 'Thomas'
         }
     ];
+
+    this.getUserName = (user) => user.name || 'Name Not Found';
 })
