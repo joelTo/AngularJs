@@ -6,5 +6,9 @@ angular.module('app', [])
 
 .controller('MyFirstController',function() {
     console.log('MyFirstController');
-    this.name = 'Thomas';
+    this.users = [
+        {
+            name: 'Thomas'
+        }
+    ];
 })
