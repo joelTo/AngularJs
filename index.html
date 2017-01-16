@@ -10,7 +10,11 @@
 
     <div ng-controller="MyFirstController as ctrl">
 
-        <h2>{{ 'bonjour' | pointexplamation }}</h2>
+        <h2>{{ 'bonjour' | exclamation }}</h2>
+        <h2>{{ 'bonjour' | exclamation:2 }}</h2>
+        <h2>{{ 'bonjour' | exclamation:3 }}</h2>
+
+        <h2>{{ ctrl.user | exclamation }}</h2>
 
     </div>
 

@@ -6,10 +6,15 @@ angular.module('app', [])
 
 .controller('MyFirstController',class MyFirstController {
     constructor() {
-        this.dte = new Date();
+        this.user = {
+            name: 'Thomas'
+        };
     }
 })
 
-.filter('pointexplamation', function () {
-   return (input) => input + '!';
+.filter('exclamation', function () {
+    return (input, size = 1) => {
+        if (typeof input !== 'string') return '';
+        return input + '!'.repeat(size);
+    }
 })
