@@ -6,6 +6,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="app.js"></script>
     <style>
+        body {
+            margin: 3em;
+        }
         .highlighted {
             padding: 1em;
             border: 1px solid #ddd;
@@ -15,15 +18,11 @@
     </style>
 </head>
 <body ng-app="app">
-    <h1>PizzaYolo</h1>
 
     <div ng-controller="MyFirstController as ctrl">
 
-        <p 
-            ng-class="{ highlighted: ctrl.highlighted }"
-            ng-click="ctrl.highlight()">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus molestiae, laboriosam dicta numquam necessitatibus, aut tempora deleniti quaerat sed at voluptatibus repellat possimus, dolores dolorum ipsam dolor ab omnis voluptas!
-        </p>
+        <input type="text" ng-model="ctrl.name">
+        <h2>{{ ctrl.name }}</h2>
 
     </div>
 

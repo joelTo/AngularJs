@@ -6,10 +6,6 @@ angular.module('app', [])
 
 .controller('MyFirstController',class MyFirstController {
     constructor() {
-        this.highlighted = false;
-    }
-
-    highlight() {
-        this.highlighted = true;
+        this.name = 'Thomas';
     }
 })
