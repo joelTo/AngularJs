@@ -4,16 +4,23 @@ angular.module('app', [])
   console.log('PizzaYOLO !');
 })
 
-.controller('MyFirstController',function() {    
-    const u1 = { name: 'Thomas' };
-    const u2 = { name: 'Georges'}; 
-    this.users = [u1, u2, u2];
+.controller('MyFirstController',class MyFirstController {
 
-    this.startWithT = (user) => user.name[0] === 'T';
-    this.filterUsers = () => this.users.filter(this.startWithT);
-
-    this.show = () => {
-        this.showme = true;
+    constructor() {
+        const u1 = { name: 'Thomas' };
+        const u2 = { name: 'Georges'}; 
+        this.users = [u1, u2];
     }
 
+    startWithT(user) { 
+        return user.name[0] === 'T';
+    }
+
+    filterUsers() {
+        this.users.filter(this.startWithT);
+    }
+
+    show(user) {
+        user.show = true;
+    }
 })
