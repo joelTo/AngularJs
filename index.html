@@ -5,18 +5,18 @@
     <title>PizzaYolo</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="app.js"></script>
+    <style>
+        .joli {
+            color: red;
+        }
+    </style>
 </head>
 <body ng-app="app">
     <h1>PizzaYolo</h1>
 
     <div ng-controller="MyFirstController as ctrl">
 
-        <ul>
-            <li ng-repeat="user in ctrl.users track by $index">
-                <a href="" ng-click="showme = !showme">{{ $index + 1 }}</a> 
-                <span ng-if="showme">{{ user.name }}</span>
-            </li>
-        </ul>
+        <h2 ng-class="ctrl.cssClass">Joli ?</h2>
 
     </div>
 
