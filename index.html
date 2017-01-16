@@ -12,7 +12,10 @@
     <div ng-controller="MyFirstController as ctrl">
 
         <ul>
-            <li ng-repeat="user in ctrl.users track by $index">{{ $index + 1 }} - {{ user.name }}</li>
+            <li ng-repeat="user in ctrl.users track by $index">
+                <a href="" ng-click="showme = !showme">{{ $index + 1 }}</a> 
+                <span ng-if="showme">{{ user.name }}</span>
+            </li>
         </ul>
 
     </div>
