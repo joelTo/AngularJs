@@ -4,17 +4,21 @@ angular.module('app', [])
   console.log('PizzaYOLO !');
 })
 
-.controller('MyFirstController',function() {
-    console.log('MyFirstController');
-    
+.controller('MyFirstController',function() {    
     this.users = [
         {
             name: 'Thomas'
+        },
+         {
+            name: 'Thibaux'
+        },
+        {
+            name: 'Orinox'
         },
         {
             name: 'Georges'
         }
     ];
 
-    this.getUserName = (user) => user.name || 'Name Not Found';
+    this.startWithT = (user) => user.name[0] === 'T';
 })
