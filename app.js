@@ -13,9 +13,13 @@ angular.module('app', [])
             { name: 'quatre', age: 42 },
         ];
         this.predicat = 'name';
+        this.reverse = false;
     }
 
     sort(predicat) {
+        if (this.predicat === predicat) {
+            this.reverse = !this.reverse;
+        }
         this.predicat = predicat;
     }
 })

@@ -34,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="user in ctrl.users | filter:query | orderBy:ctrl.predicat track by $index">
+                    <tr ng-repeat="user in ctrl.users | filter:query | orderBy:ctrl.predicat:ctrl.reverse track by $index">
                         <td>{{ user.name }}</td>
                         <td>{{ user.age }}</td>
                     </tr>
