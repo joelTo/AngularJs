@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "start": "serv -p 8080"
+    "start": "aliv -p 8080"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "aliv": "^1.4.1",
     "serve": "^2.4.1"
   }
 }
