@@ -7,11 +7,16 @@ angular.module('app', [])
 .controller('MyFirstController',class MyFirstController {
     constructor() {
         this.users = [
-            { name: 'un' },
-            { name: 'deux' },
-            { name: 'trois' },
-            { name: 'quatre' },
-        ]
+            { name: 'un', age: 10 },
+            { name: 'deux', age: 20 },
+            { name: 'trois', age: 33 },
+            { name: 'quatre', age: 42 },
+        ];
+        this.predicat = 'name';
+    }
+
+    sort(predicat) {
+        this.predicat = predicat;
     }
 })
 

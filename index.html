@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>PizzaYolo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="app.js"></script>
+    <style>
+        body {
+            margin: 3em;
+        }
+        .down:after {
+            content: '↓'
+        }
+        .up:after {
+            content: '↑'
+        }
+    </style>
 </head>
 <body ng-app="app">
 
-    <div ng-controller="MyFirstController as ctrl">
+    <div class="container">
 
+        <div ng-controller="MyFirstController as ctrl">
 
-        <input type="text">
-        <ul>
-            <li ng-repeat="user in ctrl.users | filter:query | orderBy:'name' track by $index">{{ user.name }}</li>
-        </ul>
+            <input type="search" ng-model="query" class="form-control">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><a href="" ng-click="ctrl.sort('name')" class="down">Nom</a></th>
+                        <th><a href="" ng-click="ctrl.sort('age')" class="up">Age</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in ctrl.users | filter:query | orderBy:ctrl.predicat track by $index">
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.age }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
 
     </div>
 
