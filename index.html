@@ -9,11 +9,13 @@
 <body ng-app="app">
     <h1>PizzaYolo</h1>
 
-    <div ng-controller="MyFirstController as ctrl">
-        <h2>{{ ctrl.getUserName(ctrl.users[0]) }}</h2>
-    <strong>{{ ctrl.users[0].name }} !</strong>
+    <div ng-controller="MyFirstController as ctrl1">
+        <h2>{{ ctrl1.getUserName(ctrl1.users[0]) }}</h2>
     </div>
 
+    <div ng-controller="MyFirstController as ctrl2">
+        <h2 style="color:red">{{ ctrl2.getUserName(ctrl2.users[0]) }}</h2>
+    </div>
 
 </body>
 </html>
