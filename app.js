@@ -9,16 +9,13 @@ angular.module('app', [])
         {
             name: 'Thomas'
         },
-         {
-            name: 'Thibaux'
-        },
-        {
-            name: 'Orinox'
-        },
         {
             name: 'Georges'
         }
     ];
 
     this.startWithT = (user) => user.name[0] === 'T';
+    
+    this.filterUsers = () => this.users.filter(this.startWithT);
+
 })
