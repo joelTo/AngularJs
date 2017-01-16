@@ -10,6 +10,6 @@ angular.module('app', [])
     }
 })
 
-.filter('toto', function () {
-    return (input) => input.split('').reverse().join('');
+.filter('pointexplamation', function () {
+   return (input) => input + '!';
 })
