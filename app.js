@@ -10,6 +10,9 @@ angular.module('app', [])
     this.users = [
         {
             name: 'Thomas'
+        },
+        {
+            name: 'Georges'
         }
     ];
 

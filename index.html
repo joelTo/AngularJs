@@ -11,11 +11,13 @@
 
     <div ng-controller="MyFirstController as ctrl1">
         <h2>{{ ctrl1.getUserName(ctrl1.users[0]) }}</h2>
+        <div ng-controller="MyFirstController as ctrl2">
+            <h2 style="color:red">{{ ctrl2.users[1].name }} {{ ctrl1.users[0].name }}</h2>
+        </div>
+
+
     </div>
 
-    <div ng-controller="MyFirstController as ctrl2">
-        <h2 style="color:red">{{ ctrl2.getUserName(ctrl2.users[0]) }}</h2>
-    </div>
 
 </body>
 </html>
