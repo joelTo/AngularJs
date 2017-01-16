@@ -6,6 +6,6 @@ angular.module('app', [])
 
 .controller('MyFirstController',class MyFirstController {
     constructor() {
-    this.cssClass = ['joli', 'beau'];
+    this.cssClass = {joli: true, beau:true};
     }
 })
