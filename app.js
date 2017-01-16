@@ -6,7 +6,7 @@ angular.module('app', [])
 
 .controller('MyFirstController',class MyFirstController {
     constructor() {
-        this.input = '';
+        this.name = '';
         this.users = [
             { name: 'thomas' },
             { name: 'georges' },
@@ -18,7 +18,7 @@ angular.module('app', [])
 
     filter() {
         return this.users.filter(u => 
-            u.name.includes(this.input)
+            u.name.includes(this.name)
         );
     }
 

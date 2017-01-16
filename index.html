@@ -5,32 +5,10 @@
     <title>PizzaYolo</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="app.js"></script>
-    <style>
-        body {
-            margin: 3em;
-        }
-        .highlighted {
-            padding: 1em;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 5px 5px 2px #aaa;
-        }
-    </style>
 </head>
 <body ng-app="app">
 
-    <div ng-controller="MyFirstController as ctrl">
-
-        <input type="text" ng-model="ctrl.input">
-
-        <ul>
-            <li ng-repeat="user in ctrl.filter()">
-                {{ user.name }}
-            </li>
-        </ul>
-
-    </div>
-
+    <div ng-include="'one'"></div>
 
 </body>
 </html>
