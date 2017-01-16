@@ -1,5 +1,10 @@
-angular.module("app",[])
+angular.module('app', [])
 
-.run(() => {
+.run(function() {
   console.log('PizzaYOLO !');
-});
+})
+
+.controller('MyFirstController',function() {
+    console.log('MyFirstController');
+    this.name = 'Thomas';
+})
