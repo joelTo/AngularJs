@@ -6,20 +6,6 @@ angular.module('app', [])
 
 .controller('MyFirstController',class MyFirstController {
     constructor() {
-        this.name = '';
-        this.users = [
-            { name: 'thomas' },
-            { name: 'georges' },
-            { name: 'jean' },
-            { name: 'theo' },
-            { name: 'nicolas' }
-        ]
+        this.image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Male_mallard_standing.jpg/220px-Male_mallard_standing.jpg';
     }
-
-    filter() {
-        return this.users.filter(u => 
-            u.name.includes(this.name)
-        );
-    }
-
 })
