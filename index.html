@@ -21,8 +21,13 @@
 
     <div ng-controller="MyFirstController as ctrl">
 
-        <input type="text" ng-model="ctrl.name">
-        <h2>{{ ctrl.name }}</h2>
+        <input type="text" ng-model="ctrl.input">
+
+        <ul>
+            <li ng-repeat="user in ctrl.filter()">
+                {{ user.name }}
+            </li>
+        </ul>
 
     </div>
 

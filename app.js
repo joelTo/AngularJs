@@ -6,6 +6,20 @@ angular.module('app', [])
 
 .controller('MyFirstController',class MyFirstController {
     constructor() {
-        this.name = 'Thomas';
+        this.input = '';
+        this.users = [
+            { name: 'thomas' },
+            { name: 'georges' },
+            { name: 'jean' },
+            { name: 'theo' },
+            { name: 'nicolas' }
+        ]
     }
+
+    filter() {
+        return this.users.filter(u => 
+            u.name.includes(this.input)
+        );
+    }
+
 })
