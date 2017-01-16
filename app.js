@@ -13,5 +13,5 @@ angular.module('app', [])
         }
     ];
 
-    this.getUserName = (user) => user.name.toUpperCase() || 'Name Not Found';
+    this.getUserName = (user) => user.name || 'Name Not Found';
 })
