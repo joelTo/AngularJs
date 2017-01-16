@@ -6,9 +6,12 @@ angular.module('app', [])
 
 .controller('MyFirstController',class MyFirstController {
     constructor() {
-        this.user = {
-            name: 'Thomas'
-        };
+        this.users = [
+            { name: 'un' },
+            { name: 'deux' },
+            { name: 'trois' },
+            { name: 'quatre' },
+        ]
     }
 })
 

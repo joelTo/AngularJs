@@ -10,11 +10,11 @@
 
     <div ng-controller="MyFirstController as ctrl">
 
-        <h2>{{ 'bonjour' | exclamation }}</h2>
-        <h2>{{ 'bonjour' | exclamation:2 }}</h2>
-        <h2>{{ 'bonjour' | exclamation:3 }}</h2>
 
-        <h2>{{ ctrl.user | exclamation }}</h2>
+        <input type="text">
+        <ul>
+            <li ng-repeat="user in ctrl.users | filter:'t' track by $index">{{ user.name }}</li>
+        </ul>
 
     </div>
 
