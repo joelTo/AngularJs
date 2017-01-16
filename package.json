@@ -1,0 +1,14 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "serv -p 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^2.4.1"
+  }
+}
