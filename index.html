@@ -6,11 +6,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="app.js"></script>
     <style>
-        .joli {
-            color: red;
-        }
-        .beau {
-            border: 1px solid green;
+        .highlighted {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 5px 5px 2px #aaa;
         }
     </style>
 </head>
@@ -19,7 +19,11 @@
 
     <div ng-controller="MyFirstController as ctrl">
 
-        <h2 ng-class="{ joli: true, beau: true }">Joli ?</h2>
+        <p 
+            ng-class="{ highlighted: ctrl.highlighted }"
+            ng-click="ctrl.highlight()">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus molestiae, laboriosam dicta numquam necessitatibus, aut tempora deleniti quaerat sed at voluptatibus repellat possimus, dolores dolorum ipsam dolor ab omnis voluptas!
+        </p>
 
     </div>
 

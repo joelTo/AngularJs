@@ -6,6 +6,10 @@ angular.module('app', [])
 
 .controller('MyFirstController',class MyFirstController {
     constructor() {
-    this.cssClass = {joli: true, beau:true};
+        this.highlighted = false;
+    }
+
+    highlight() {
+        this.highlighted = true;
     }
 })
