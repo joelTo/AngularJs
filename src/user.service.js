@@ -11,9 +11,15 @@ export class UserService {
             .then(response =>  response.data);
     }
 
-    addUser(user) {
+    addUser(user,ca) {
         return this.$http.post(api, user)
-            .then(response =>  response.data);
+            .then(response =>  response.data)
+
+    }
+
+    updateUser(user) {
+        return this.$http.put(`${ api }/${ user.id }`, user)
+            .then(response =>  response.data);  
     }
 
     deleteUser(user) {

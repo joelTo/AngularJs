@@ -38,10 +38,13 @@
                     <tr ng-repeat="user in ctrl.users | filter:query | orderBy:ctrl.predicat:ctrl.reverse track by $index">
                         <td>{{ user.name }}</td>
                         <td>{{ user.age }}</td>
-                        <td><button 
+                        <td style="text-align:right">
+                            <button 
+                            ng-click="ctrl.editUser(user)" class="btn">Editer</button>
+                            <button 
                             ng-disabled="user.deleted"
-                            ng-click="ctrl.deleteUser(user)" 
-                            class="pull-right btn">Supprimer</button></td>
+                            ng-click="ctrl.deleteUser(user)" class="btn">Supprimer</button>
+                        </td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -53,11 +56,13 @@
                 </tfoot>
             </table>
 
-            <form ng-class="{ invalid: userForm.$invalid && userForm.$dirty }" name="userForm" novalidate ng-submit="ctrl.addUser(userForm, ctrl.newUser)" class="well">
-                <h4>Nouvel utilisateur</h4>
+            <form ng-class="{ invalid: userForm.$invalid && userForm.$dirty }" 
+                name="userForm" novalidate ng-submit="ctrl.saveUser(userForm, ctrl.user)" class="well">
+                <h4 ng-if="!ctrl.user.id">Nouvel utilisateur</h4>
+                <h4 ng-if="ctrl.user.id">Édition utilisateur</h4>
                 <div class="form-group">
                     <label for="name">Nom</label>
-                    <input ng-model="ctrl.newUser.name" 
+                    <input ng-model="ctrl.user.name" 
                         name="name" 
                         required
                         ng-maxlength="20"
@@ -70,11 +75,16 @@
                 <div class="form-group">
                     <label for="age">Age</label>
                     <input 
-                        ng-model="ctrl.newUser.age"
+                        ng-model="ctrl.user.age"
                         name="age" 
                         id="age" type="number" class="form-control">
                 </div>
-                <button type="submit" class="btn">Ajouter cet utilisateur</button>
+                <button type="submit" class="btn btn-primary">
+                    <span ng-if="!ctrl.user.id">Ajouter cet utilisateur</span>
+                    <span ng-if="ctrl.user.id">Modifier cet utilisateur</span>
+                </button>
+                <button type="button" ng-click="ctrl.cancel()" class="btn">Annuler</button>
+
             </form>
 
         </div>

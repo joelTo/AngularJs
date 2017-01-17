@@ -10,7 +10,7 @@ export class MyFirstController {
 
         this.predicat = 'name';
         this.reverse = false;
-        this.newUser = { name: '', age: 18 };
+        this._initUser()
     }
 
     sort(predicat) {
@@ -20,25 +20,40 @@ export class MyFirstController {
         this.predicat = predicat;
     }
 
-    addUser(form, user) {
+    saveUser(form, user) {
         if (form.$invalid) return;
-        let temp = angular.copy(user);
-        this.UserService.addUser(temp)
-            .then(user => {
-                console.log(user);
-                this.users.push(user);
-            });
-        user.name = '';
-        form.$setPristine();
+
+        this.UserService.saveUser(user)
+            .then(user => this.upsert(user))
+            .then(() => {
+                this._initUser();
+                form.$setPristine(true);
+            })
+    }
+
+    // ajoute user à this.users si non trouvé, le modifie si trouvé 
+    upsert(user) {
+         const _user = this.users.find( u => u.id ===user.id );
+         
     }
 
     deleteUser(user) {
         user.deleted = true;
-        // this.deleteDisabled = true;
         this.UserService.deleteUser(user)
             .then(() => {
-                // user.deleted = false;
                 this.users = this.users.filter(u => u.id !== user.id);
             });
+    }
+
+    editUser(user) {
+        this.user = angular.copy(user);
+    }
+
+    cancel() {
+        this._initUser();
+    }
+
+    _initUser() {
+        this.user = { name: '', age: 0 };
     }
 }
