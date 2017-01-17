@@ -14,6 +14,7 @@ angular.module('app', [])
         ];
         this.predicat = 'name';
         this.reverse = false;
+        this.err= false;
 
     }
 
@@ -25,12 +26,18 @@ angular.module('app', [])
     }
 
     save(form){
-        if(form.$invalid)return; 
-
+        if(form.$invalid){
+            if(form.$dirty){
+                this.err= true;
+            }
+        return;
+        }
             this.users.push({
                 name:this.newname,
                 age:this.newage
-            })    
+                
+            }) 
+            this.err= false;   
 
     
     }

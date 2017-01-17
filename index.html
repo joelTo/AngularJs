@@ -23,7 +23,7 @@
     <div class="container">
 
         <div ng-controller="MyFirstController as ctrl">
-<table class="table">
+                <table class="table">
                 <thead>
                     <tr>
                         <th><a ng-class="{ up: ctrl.predicat === 'name' && !ctrl.reverse, down: ctrl.predicat === 'name' && ctrl.reverse}"
@@ -48,9 +48,14 @@
 
             <form  name="myForm" novalidate ng-submit="ctrl.save(myForm)">
         <input name="inputname" ng-model="ctrl.newname" required>
+          <p ng-if="ctrl.err">Erreur</p>
+          <p ng-if="ctrl.err">trop long</p>
+
         <input name="inputage" ng-model="ctrl.newage" required>
         <button type="submit">ok</button>
             </form>
+
+         
         </div>
     </div>
 
