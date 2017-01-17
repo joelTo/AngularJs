@@ -1,17 +1,15 @@
 export class MyFirstController {
     constructor (UserService, Version) {
-
-       this.UserService = UserService;
+        this.UserService = UserService;
         this.version = Version;
 
-        UserService.getUsers()
+        this.UserService.getUsers()
             .then(users => {
                 this.users = users;
             });
 
         this.predicat = 'name';
         this.reverse = false;
-
         this.newUser = { name: '', age: 18 };
     }
 
@@ -24,27 +22,23 @@ export class MyFirstController {
 
     addUser(form, user) {
         if (form.$invalid) return;
-
         let temp = angular.copy(user);
-        this.UserService.setUser(temp).then(user => {
+        this.UserService.addUser(temp)
+            .then(user => {
                 console.log(user);
                 this.users.push(user);
             });
         user.name = '';
+        form.$setPristine();
     }
 
-    //   deleteUser(element) {
-    //         this.UserService.deleteUser(element)
-    //         .then(  this.users = this.users.filter(u => u.id !== element.id));
-           
-    //         }
-
-     deleteUser(user) {
-         this.deleteDisabled=true;
+    deleteUser(user) {
+        user.deleted = true;
+        // this.deleteDisabled = true;
         this.UserService.deleteUser(user)
             .then(() => {
+                // user.deleted = false;
                 this.users = this.users.filter(u => u.id !== user.id);
             });
     }
-
 }
