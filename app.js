@@ -27,8 +27,8 @@ angular.module('app', [])
     save(form){
         if(form.$valid){
             this.users.push({
-                name:form.inputname.$modelValue,
-                age:form.inputage.$modelValue
+                name:this.newname,
+                age:this.newage
             })    
 
         }
