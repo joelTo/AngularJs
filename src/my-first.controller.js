@@ -1,9 +1,9 @@
 export class MyFirstController {
-    constructor (SuperService, Version) {
+    constructor (UserService, Version) {
 
         this.version = Version;
 
-        SuperService.getUsers()
+        UserService.getUsers()
             .then(users => {
                 this.users = users;
             });
