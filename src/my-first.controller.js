@@ -1,6 +1,7 @@
 export class MyFirstController {
     constructor (UserService, Version) {
 
+       this.UserService = UserService;
         this.version = Version;
 
         UserService.getUsers()
@@ -25,7 +26,18 @@ export class MyFirstController {
         if (form.$invalid) return;
 
         let temp = angular.copy(user);
-        this.users.push(temp);
+        this.UserService.setUser(temp).then(user => {
+                console.log(user);
+                this.users.push(user);
+            });
         user.name = '';
     }
+
+      deleteUser(element) {
+            this.UserService.deleteUser(element)
+            .then( this.users.filter);
+           
+            }
+
+
 }

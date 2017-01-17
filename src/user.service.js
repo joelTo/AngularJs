@@ -11,6 +11,20 @@ export class UserService {
         })
     }
 
+    setUser(newUser) {
+        return this.$http.post('http://localhost:3000/user',newUser)
+        .then(function(response){
+           return response.data;
+        })
+    }
+
+     deleteUser(UserTodelete) {
+        return this.$http.delete('http://localhost:3000/user'+'/'+UserTodelete.id)
+        .then(function(response){
+           return response.data;
+        })
+    }
+
 
 
   

@@ -3,7 +3,7 @@ import angular from 'angular';
 import { ExclamationFilter } from './exclamation.filter';
 import { EldestFilter } from './eldest.filter';
 import { MyFirstController } from './my-first.controller';
-import { UserService } from './super.service';
+import { UserService } from './user.service';
 
 angular.module('app', [])
 
