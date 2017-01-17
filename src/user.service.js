@@ -1,6 +1,7 @@
 export class UserService {
-    constructor($http) {
+    constructor($http,$timeout) {
         this.$http = $http;
+        this.$timeout=$timeout;
     }
 
   
@@ -18,11 +19,18 @@ export class UserService {
         })
     }
 
-     deleteUser(UserTodelete) {
-        return this.$http.delete('http://localhost:3000/user'+'/'+UserTodelete.id)
-        .then(function(response){
-           return response.data;
-        })
+    //  deleteUser(UserTodelete) {
+    //     return this.$http.delete('http://localhost:3000/user'+'/'+UserTodelete.id)
+    //     .then(function(response){
+    //        return response.data;
+    //     })
+    // }
+
+    
+    deleteUser(user) {
+        return this.$timeout(3000)
+            .then(() => this.$http.delete('http://localhost:3000/user'+'/'+user.id))
+            .then(response =>  response.data);
     }
 
 

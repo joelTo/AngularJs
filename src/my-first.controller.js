@@ -33,11 +33,18 @@ export class MyFirstController {
         user.name = '';
     }
 
-      deleteUser(element) {
-            this.UserService.deleteUser(element)
-            .then( this.users.filter);
+    //   deleteUser(element) {
+    //         this.UserService.deleteUser(element)
+    //         .then(  this.users = this.users.filter(u => u.id !== element.id));
            
-            }
+    //         }
 
+     deleteUser(user) {
+         this.deleteDisabled=true;
+        this.UserService.deleteUser(user)
+            .then(() => {
+                this.users = this.users.filter(u => u.id !== user.id);
+            });
+    }
 
 }

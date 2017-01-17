@@ -37,7 +37,9 @@
                     <tr ng-repeat="user in ctrl.users | filter:query | orderBy:ctrl.predicat:ctrl.reverse track by $index">
                         <td>{{ user.name }}</td> 
                         <td>{{ user.age }}  </td>
-                        <td><button ng-click="ctrl.deleteUser(user)" class="pull-right btn">Supprimer</button></td>
+                        <td><button 
+                         ng-disabled="ctrl.deleteDisabled"
+                        ng-click="ctrl.deleteUser(user)" class="pull-right btn">Supprimer</button></td>
                     </tr>
                 </tbody>
                 <tfoot>
