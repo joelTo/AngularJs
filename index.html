@@ -23,26 +23,9 @@
     <div class="container">
 
         <div ng-controller="MyFirstController as ctrl">
-
-            <input type="search" ng-model="query" class="form-control">
-
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th><a href="" ng-click="ctrl.sort('name')" class="down">Nom</a></th>
-                        <th><a href="" ng-click="ctrl.sort('age')" class="up">Age</a></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="user in ctrl.users | filter:query | orderBy:ctrl.predicat:ctrl.reverse track by $index">
-                        <td>{{ user.name }}</td>
-                        <td>{{ user.age }}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <p>Le doyen est {{ctrl.users | doyen}}</p>
 
         </div>
-
     </div>
 
 </body>

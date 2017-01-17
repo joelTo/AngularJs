@@ -7,10 +7,10 @@ angular.module('app', [])
 .controller('MyFirstController',class MyFirstController {
     constructor() {
         this.users = [
-            { name: 'un', age: 10 },
-            { name: 'deux', age: 20 },
-            { name: 'trois', age: 33 },
-            { name: 'quatre', age: 42 },
+            { name: 'Matthieu', age: 10 },
+            { name: 'Arnaud', age: 20 },
+            { name: 'Thomas', age: 33 },
+            { name: 'Fawzi', age: 42 },
         ];
         this.predicat = 'name';
         this.reverse = false;
@@ -28,5 +28,19 @@ angular.module('app', [])
     return (input, size = 1) => {
         if (typeof input !== 'string') return '';
         return input + '!'.repeat(size);
+    }
+})
+
+.filter('doyen',function(){
+    return (tableau)=>{
+        var save=tableau[0];
+        tableau.forEach(function(element) {
+            if(element.age>save.age){
+                save=element;
+            }
+                
+        }, this);
+        return save.name;
+        
     }
 })
