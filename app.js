@@ -25,13 +25,14 @@ angular.module('app', [])
     }
 
     save(form){
-        if(form.$valid){
+        if(form.$invalid)return; 
+
             this.users.push({
                 name:this.newname,
                 age:this.newage
             })    
 
-        }
+    
     }
 })
 

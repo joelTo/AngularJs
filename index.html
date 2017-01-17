@@ -47,8 +47,8 @@
             <p>Le doyen est {{ctrl.users | doyen}}</p>
 
             <form  name="myForm" novalidate ng-submit="ctrl.save(myForm)">
-        <input name="inputname" ng-model="ctrl.newname">
-        <input name="inputage" ng-model="ctrl.newage">
+        <input name="inputname" ng-model="ctrl.newname" required>
+        <input name="inputage" ng-model="ctrl.newage" required>
         <button type="submit">ok</button>
             </form>
         </div>
