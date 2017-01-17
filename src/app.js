@@ -1,67 +1,19 @@
 import angular from 'angular';
+
+import { ExclamationFilter } from './exclamation.filter';
+import { EldestFilter } from './eldest.filter';
+import { MyFirstController } from './my-first.controller';
+import { SuperService } from './super.service';
+
 angular.module('app', [])
 
+.controller('MyFirstController', MyFirstController)
+.filter('exclamation', ExclamationFilter)
+.filter('eldest', EldestFilter)
+.service('SuperService', SuperService)
+
+.value('Version', '1.0.0')
 
 .run(function() {
   console.log('PizzaYOLO !');
-})
-
-.controller('MyFirstController',class MyFirstController {
-    constructor() {
-        this.users = [
-            { name: 'Matthieu', age: 10 },
-            { name: 'Arnaud', age: 20 },
-            { name: 'Thomas', age: 33 },
-            { name: 'Fawzi', age: 42 },
-        ];
-        this.predicat = 'name';
-        this.reverse = false;
-        this.err= false;
-
-    }
-
-    sort(predicat) {
-        if (this.predicat === predicat) {
-            this.reverse = !this.reverse;
-        }
-        this.predicat = predicat;
-    }
-
-    save(form){
-        if(form.$invalid){
-            if(form.$dirty){
-                this.err= true;
-            }
-        return;
-        }
-            this.users.push({
-                name:this.newname,
-                age:this.newage
-                
-            }) 
-            this.err= false;   
-
-    
-    }
-})
-
-.filter('exclamation', function () {
-    return (input, size = 1) => {
-        if (typeof input !== 'string') return '';
-        return input + '!'.repeat(size);
-    }
-})
-
-.filter('doyen',function(){
-    return (tableau)=>{
-        var save=tableau[0];
-        tableau.forEach(function(element) {
-            if(element.age>save.age){
-                save=element;
-            }
-                
-        }, this);
-        return save.name;
-        
-    }
 })
