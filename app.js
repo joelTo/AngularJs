@@ -14,6 +14,7 @@ angular.module('app', [])
         ];
         this.predicat = 'name';
         this.reverse = false;
+
     }
 
     sort(predicat) {
@@ -21,6 +22,16 @@ angular.module('app', [])
             this.reverse = !this.reverse;
         }
         this.predicat = predicat;
+    }
+
+    save(form){
+        if(form.$valid){
+            this.users.push({
+                name:form.inputname.$modelValue,
+                age:form.inputage.$modelValue
+            })    
+
+        }
     }
 })
 

@@ -18,15 +18,43 @@
         }
     </style>
 </head>
-<body ng-app="app">
+<body ng-app="app">     
 
     <div class="container">
 
         <div ng-controller="MyFirstController as ctrl">
+<table class="table">
+                <thead>
+                    <tr>
+                        <th><a ng-class="{ up: ctrl.predicat === 'name' && !ctrl.reverse, down: ctrl.predicat === 'name' && ctrl.reverse}"
+                            href="" ng-click="ctrl.sort('name')">Nom</a></th>
+                        <th><a ng-class="{ up: ctrl.predicat === 'age' && !ctrl.reverse, down: ctrl.predicat === 'age' && ctrl.reverse}"
+                            href="" ng-click="ctrl.sort('age')">Age</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in ctrl.users  track by $index">
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.age }}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+
+
             <p>Le doyen est {{ctrl.users | doyen}}</p>
 
+            <form  name="myForm" novalidate ng-submit="ctrl.save(myForm)">
+        <input name="inputname" ng-model="ctrl.newname">
+        <input name="inputage" ng-model="ctrl.newage">
+        <button type="submit">ok</button>
+            </form>
         </div>
     </div>
+
+
 
 </body>
 </html>
