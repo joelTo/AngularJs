@@ -6,6 +6,11 @@ export class UserService {
         this.$timeout = $timeout;
     }
 
+    getUser(id) {
+        return this.$http.get(api+'/'+id)
+            .then(response =>  response.data);
+    }
+
     getUsers() {
         return this.$http.get(api)
             .then(response =>  response.data);
