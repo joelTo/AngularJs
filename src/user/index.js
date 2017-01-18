@@ -54,4 +54,15 @@ export default angular.module('UserModule', [
   }
 })
 
+.directive("major", function() {
+  return {
+    require: "ngModel",
+    link: function(scope, element, attrs, ngModelCtrl) {
+      ngModelCtrl.$validators.major = function(value) {
+        return value >= 18;
+      };
+    }
+  }
+})
+
 .name;
