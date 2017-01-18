@@ -7,7 +7,7 @@ export class UsersController {
         this.UserService.getUsers()
             .then(users => {
                 this.users = users;
-                console.table(users);
+              //  console.table(users); // tres interesseant
             });
 
         this.predicat = 'name';

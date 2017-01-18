@@ -20,12 +20,12 @@ export default angular.module('user', [
 
     $routeProvider
     .when('/users', {
-      templateUrl: 'users.html',
+      template: require('./users.html'),
       controller: 'UsersController',
       controllerAs: 'ctrl'
     })
     .when('/user/:id', {
-      templateUrl: 'user.html',
+      template: require('./user.html'),
       controller: 'UserController',
       controllerAs: 'ctrl'
     })
