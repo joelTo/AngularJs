@@ -1,7 +1,9 @@
 <form ng-class="{ invalid: userForm.$invalid && userForm.$dirty }" 
     name="userForm" novalidate ng-submit="ctrl.saveUser(userForm, ctrl.user)" class="well">
 
+
     <div class="form-group">
+       
         <label for="name">Nom</label>
         <input ng-model="ctrl.user.name" 
             name="name" 
@@ -22,8 +24,8 @@
             id="age" type="number" class="form-control">
     </div>
 
-    <button type="submit" class="btn btn-primary">Enregistrer</button>
+    <button type="submit" class="btn btn-success">Enregistrer</button>
 
-    <a type="button" ng-href="/users" class="btn btn-default">Annuler</a>
+    <a type="button" ng-href="/users" class="btn btn-info">Annuler</a>
 
 </form>
