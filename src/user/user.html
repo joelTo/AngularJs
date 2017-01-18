@@ -17,9 +17,12 @@
     <div class="form-group">
         <label for="age">Age</label>
         <input 
+            major
             ng-model="ctrl.user.age"
             name="age" 
             id="age" type="number" class="form-control">
+        <p class="text-danger" 
+            ng-if="userForm.age.$error.major && userForm.age.$dirty">Trop jeune</p>
     </div>
 
     <button type="submit" class="btn btn-primary">Enregistrer</button>

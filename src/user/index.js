@@ -31,34 +31,12 @@ export default angular.module('UserModule', [
     })
 })
 
-.directive('dtaUser', function () {
-  return  {
-    restrict: 'E',
-    template: `
-      <div>
-        <strong>User</strong>
-        <br>
-        <button ng-click="ctrl.clickme()">click me</button>
-      </div>
-    `,
-    link(scope, element, attrs) {
-      element.css({ color: attrs.color });
-    },
-    controller: function () {
-      console.log('controller')
-      this.clickme = function () {
-        console.log('click');
-      }
-    },
-    controllerAs: 'ctrl'
-  }
-})
-
 .directive("major", function() {
   return {
     require: "ngModel",
     link: function(scope, element, attrs, ngModelCtrl) {
       ngModelCtrl.$validators.major = function(value) {
+        console.log('ici', value)
         return value >= 18;
       };
     }
