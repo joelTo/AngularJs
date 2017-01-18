@@ -34,7 +34,10 @@ export default angular.module('UserModule', [
 .directive('dtaUser', function () {
   return  {
     restrict: 'E',
-    template: `<strong>User</strong>`
+    template: `<strong>User</strong>`,
+    link(scope, element, attrs) {
+      element.css({ color: attrs.color });
+    }
   }
 })
 
