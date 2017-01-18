@@ -29,10 +29,10 @@ angular.module('app', [
     .when('/about', {
       template: '<h1>About ?</h1>'
     })
-     .when('/users', {
-       templateUrl: 'users.html',
-       controller: 'MyFirstController'
-
+    .when('/users', {
+      templateUrl: 'users.html',
+      controller: 'MyFirstController',
+      controllerAs: 'ctrl'
     });
 
 })
