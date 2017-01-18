@@ -34,13 +34,23 @@ export default angular.module('UserModule', [
 .directive('dtaUser', function () {
   return  {
     restrict: 'E',
-    template: `<strong>User</strong>`,
+    template: `
+      <div>
+        <strong>User</strong>
+        <br>
+        <button ng-click="ctrl.clickme()">click me</button
+      </div>
+    `,
     link(scope, element, attrs) {
       element.css({ color: attrs.color });
     },
     controller: function () {
       console.log('controller')
-    }
+      this.clickme = function () {
+        console.log('click');
+      }
+    },
+    controllerAs: 'ctrl'
   }
 })
 
