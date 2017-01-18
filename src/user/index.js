@@ -6,6 +6,7 @@ import { UsersController } from './users.controller';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 
+
 export default angular.module('user', [
     ngRoute
 ])
@@ -24,7 +25,7 @@ export default angular.module('user', [
       controller: 'UsersController',
       controllerAs: 'ctrl'
     })
-    .when('/user/:id', {
+    .when('/user/:id?', {
       template: require('./user.html'),
       controller: 'UserController',
       controllerAs: 'ctrl'
