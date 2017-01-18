@@ -31,4 +31,11 @@ export default angular.module('UserModule', [
     })
 })
 
+.directive('dtaUser', function () {
+  return  {
+    restrict: 'E',
+    template: `<strong>User</strong>`
+  }
+})
+
 .name;

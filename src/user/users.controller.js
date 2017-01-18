@@ -20,14 +20,13 @@ export class UsersController {
     }
 
     deleteUser(user) {        
-        user.delete = true;
-
         this.undo[user.id] = this.$timeout(5000);
         this.undo[user.id].then(() => {
             this.users = this.users.filter(u => u.id !== user.id);
-            this.UserService.deleteUser(user)
+            this.UserService.deleteUser(user);
+            delete this.undo[user.id];
         }, () => {
-            user.delete = false;
+            delete this.undo[user.id];
         });
     }
 
