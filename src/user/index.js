@@ -6,8 +6,7 @@ import { UsersController } from './users.controller';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 
-
-export default angular.module('user', [
+export default angular.module('UserModule', [
     ngRoute
 ])
 

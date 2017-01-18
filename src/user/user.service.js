@@ -7,8 +7,11 @@ export class UserService {
     }
 
     getUser(id) {
-        return this.$http.get(`${ api }/${ id }`)
-            .then(response =>  response.data);
+        if (id) {
+            return this.$http.get(`${ api }/${ id }`)
+                .then(response =>  response.data);
+        }
+        return Promise.resolve({ name: '', age: 10 });
     }
 
     getUsers() {

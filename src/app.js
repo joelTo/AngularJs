@@ -20,7 +20,7 @@ angular.module('app', [
     .when('/', {
       template: '<h1>Bienvenue {{ ctrl.name }}</h1>',
       controller: function () {
-        this.name = 'JoelTo';
+        this.name = 'Thomas';
       },
       controllerAs: 'ctrl'
     })

@@ -1,68 +1,36 @@
 export class UserController {
     constructor($routeParams, UserService) {
-        const id = $routeParams.id;
         this.UserService = UserService;
-
-       if (id) {
-            this.UserService.getUser(id)
-                .then(user => this.user = user);
-        } else {
-            this.user = { name: '', age: 0 };
-        }
-
-    
-    }
-
-    sort(predicat) {
-        if (this.predicat === predicat) {
-            this.reverse = !this.reverse;
-        }
-        this.predicat = predicat;
+        this.UserService.getUser($routeParams.id)
+            .then(user => this.user = user);
     }
 
     saveUser(form, user) {
         if (form.$invalid) return;
-
         this.UserService.saveUser(user)
-            .then(user => this.upsert(user))
-            .then(() => {
-                this._initUser();
-                form.$setPristine(true);
-            });
+            // .then(user => this.upsert(user))
+            // .then(() => {
+            //     this._initUser();
+            //     form.$setPristine(true);
+            // });
     }
 
-    // ajoute user à this.users si non trouvé, le modifie si trouvé 
-    upsert(user) {
-       // const idx = this.users.findIndex(u => u.id === user.id);
-        if (idx !== -1) { // user trouvé mise à jour
-            this.users[idx] = user;
-        } else { // on ajoute le user
-            this.users.push(user);
-        }
-    }
+    // editUser(user) {
+    //     this.user = angular.copy(user);
+    // }
 
-    deleteUser(user) {
-        user.deleted = true;
-        this.UserService.deleteUser(user)
-            .then(() => {
-                this.users = this.users.filter(u => u.id !== user.id);
-            });
-    }
+    // cancel() { // ???
+    //     this.user = { name: '', age: 0 };
+    // }
 
-    editUser(user) {
-        this.user = angular.copy(user);
-    }
+    // // // ajoute user à this.users si non trouvé, le modifie si trouvé 
+    // // upsert(user) {
+    // //     const idx = this.users.findIndex(u => u.id === user.id);
+    // //     if (idx !== -1) { // user trouvé mise à jour
+    // //         this.users[idx] = user;
+    // //     } else { // on ajoute le user
+    // //         this.users.push(user);
+    // //     }
+    // // }
 
-    cancel() {
-        this._initUser();
-    }
-
-    _initUser() {
-        this.user = { name: '', age: 0 };
-    }
-    }
-
-
-    
-
-
+}

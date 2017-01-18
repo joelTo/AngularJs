@@ -16,16 +16,12 @@
         </thead>
         <tbody>
             <tr ng-repeat="user in ctrl.users | filter:query | orderBy:ctrl.predicat:ctrl.reverse track by $index">
-              <td>
-                    <a ng-href="/user/{{ user.id }}">{{ user.name }}</a>
-                </td>
+                <td>{{ user.name }}</td>
                 <td>{{ user.age }}</td>
                 <td style="text-align:right">
-                    <button 
-                    ng-click="ctrl.editUser(user)" class="btn">Editer</button>
-                    <button 
-                    ng-disabled="user.deleted"
-                    ng-click="ctrl.deleteUser(user)" class="btn">Supprimer</button>
+                    <a ng-href="/user/{{ user.id }}" class="btn btn-default">Editer</a>
+                    <button ng-disabled="user.deleted"
+                        ng-click="ctrl.deleteUser(user)" class="btn btn-default">Supprimer</button>
                 </td>
             </tr>
         </tbody>
@@ -38,6 +34,6 @@
         </tfoot>
     </table>
 
-    <a class="btn-primerion" ng-href="/user">Ajouter un nouvel utilisateur</a>
+    <a href="/user" class="btn btn-primary">Ajout utilisateur</a>
 
 </div>
