@@ -18,11 +18,17 @@ angular.module('app', [
 .filter('eldest', EldestFilter)
 .service('UserService', UserService)
 
-.config(function($routeProvider) {
+.config(function($routeProvider, $locationProvider) {
 
-  $routeProvider.when('/', {
-    template: '<h1>Bienvenue</h1>'
-  })
+  $locationProvider.html5Mode(true);
+
+  $routeProvider
+    .when('/', {
+      template: '<h1>Bienvenue</h1>'
+    })
+    .when('/about', {
+      template: '<h1>About ?</h1>'
+    });
 
 })
 
