@@ -28,6 +28,11 @@ angular.module('app', [
     })
     .when('/about', {
       template: '<h1>About ?</h1>'
+    })
+     .when('/users', {
+       templateUrl: 'users.html',
+       controller: 'MyFirstController'
+
     });
 
 })
