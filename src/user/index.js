@@ -38,7 +38,7 @@ export default angular.module('UserModule', [
       <div>
         <strong>User</strong>
         <br>
-        <button ng-click="ctrl.clickme()">click me</button
+        <button ng-click="ctrl.clickme()">click me</button>
       </div>
     `,
     link(scope, element, attrs) {
