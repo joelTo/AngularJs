@@ -32,9 +32,15 @@ export class MyFirstController {
     }
 
     // ajoute user à this.users si non trouvé, le modifie si trouvé 
+
     upsert(user) {
-         const _user = this.users.find( u => u.id ===user.id );
-         
+         const idx = this.users.findIndex( u => u.id ===user.id );
+         if (idx!==-1){// on a trouvé un utilisateur correspondant et on change son index
+             this.users[idx]= user;
+         }else{// on rajout un nouvel utilisateur
+             this.users.push(user);
+         }
+
     }
 
     deleteUser(user) {
