@@ -37,6 +37,9 @@ export default angular.module('UserModule', [
     template: `<strong>User</strong>`,
     link(scope, element, attrs) {
       element.css({ color: attrs.color });
+    },
+    controller: function () {
+      console.log('controller')
     }
   }
 })
