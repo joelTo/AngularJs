@@ -1,4 +1,4 @@
- module.exports = {
+odule.exports = {
      entry: './src/app.js',
      output: {
         path: './public',
@@ -11,6 +11,10 @@
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.html$/,
+                use: 'raw-loader'
             }
         ]
     },

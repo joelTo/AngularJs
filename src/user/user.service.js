@@ -7,7 +7,7 @@ export class UserService {
     }
 
     getUser(id) {
-        return this.$http.get(api+'/'+id)
+        return this.$http.get(`${ api }/${ id }`)
             .then(response =>  response.data);
     }
 
@@ -16,10 +16,13 @@ export class UserService {
             .then(response =>  response.data);
     }
 
-    addUser(user,ca) {
-        return this.$http.post(api, user)
-            .then(response =>  response.data)
+    saveUser(user) {
+        return this[user.id ? 'updateUser' : 'addUser'](user);
+    }
 
+    addUser(user) {
+        return this.$http.post(api, user)
+            .then(response =>  response.data);
     }
 
     updateUser(user) {

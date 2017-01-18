@@ -1,11 +1,13 @@
-export class MyFirstController {
+export class UsersController {
     constructor (UserService, Version) {
+
         this.UserService = UserService;
         this.version = Version;
 
         this.UserService.getUsers()
             .then(users => {
                 this.users = users;
+                console.table(users);
             });
 
         this.predicat = 'name';
@@ -28,19 +30,17 @@ export class MyFirstController {
             .then(() => {
                 this._initUser();
                 form.$setPristine(true);
-            })
+            });
     }
 
     // ajoute user à this.users si non trouvé, le modifie si trouvé 
-
     upsert(user) {
-         const idx = this.users.findIndex( u => u.id ===user.id );
-         if (idx!==-1){// on a trouvé un utilisateur correspondant et on change son index
-             this.users[idx]= user;
-         }else{// on rajout un nouvel utilisateur
-             this.users.push(user);
-         }
-
+        const idx = this.users.findIndex(u => u.id === user.id);
+        if (idx !== -1) { // user trouvé mise à jour
+            this.users[idx] = user;
+        } else { // on ajoute le user
+            this.users.push(user);
+        }
     }
 
     deleteUser(user) {
