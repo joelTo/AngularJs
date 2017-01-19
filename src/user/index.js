@@ -5,6 +5,7 @@ import { EldestFilter } from './eldest.filter';
 import { UsersController } from './users.controller';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
+import { DtaGravatar } from './dta-gravatar/dta-gravatar.component';
 
 export default angular.module('UserModule', [
     ngRoute
@@ -42,8 +43,6 @@ export default angular.module('UserModule', [
   }
 })
 
-.component('dtaGravatar', {
-  template: '<div>Bientôt ici un gravatar</div>'
-})
+.component('dtaGravatar', DtaGravatar)
 
 .name;
