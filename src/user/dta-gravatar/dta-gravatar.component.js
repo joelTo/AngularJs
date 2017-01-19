@@ -3,7 +3,7 @@ import md5 from 'md5';
 class DtaGravatarController {
     constructor() {}
 
-    $onInit() {
+    $onChanges() {
         this.md5 = md5(this.email || '');
     }
 

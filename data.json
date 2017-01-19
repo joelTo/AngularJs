@@ -4,17 +4,19 @@
       "name": "toto",
       "age": 23,
       "id": 21,
-      "email": "tmoyse@gmail.com"
+      "email": "tmoyse@gmail.com",
+      "rating": 3
     },
     {
       "name": "John Doe",
-      "age": 10,
+      "age": 22,
       "id": 22,
-      "email": "prepontkevin@gmail.com"
+      "email": "prepontkevin@gmail.com",
+      "rating": 7
     },
     {
       "name": "John Doe",
-      "age": 10,
+      "age": 22,
       "id": 23,
       "email": "naholyr@gmail.com"
     }

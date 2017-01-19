@@ -2,8 +2,10 @@ class DtaUserController {
     
     constructor() {}
 
-    $onChanges() {
-        this.user = angular.copy(this.user);
+    $onChanges(changes) {
+        if (changes.user) {
+            this.user = angular.copy(changes.user.currentValue);
+        }
     }
 
     saveUser(form, user) {

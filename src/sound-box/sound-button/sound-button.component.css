@@ -21,3 +21,9 @@ sound-button button.close {
     top: 3px;
     right: 8px;
 }
+
+sound-button div.checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

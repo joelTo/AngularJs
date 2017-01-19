@@ -25,6 +25,10 @@
             ng-if="userForm.age.$error.major && userForm.age.$dirty">Trop jeune</p>
     </div>
 
+    <div class="form-group">
+        <span uib-rating ng-model="$ctrl.user.rating" max="10"></span>
+    </div>
+
     <button type="submit" class="btn btn-primary">Enregistrer</button>
 
     <a type="button" ng-href="/users" class="btn btn-default">Annuler</a>

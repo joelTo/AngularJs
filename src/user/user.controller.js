@@ -8,6 +8,8 @@ export class UserController {
 
     saveUser(user) {
         this.UserService.saveUser(user)
-            .then(() => this.$location.path('/users'));
+            .then(() => {
+                this.$location.path('/users')
+            });
     }
 }
