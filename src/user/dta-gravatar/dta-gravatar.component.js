@@ -1,7 +1,13 @@
+import md5 from 'md5';
+
 class DtaGravatarController {
-    constructor(){}
+    constructor(){
+       
+    }
 
     $onInit() {
+         this.md5 = md5(this.email);
+         this.gravatar=('https://www.gravatar.com/avatar/'+ md5(this.email));
         //this.email = 'tmoyse@gmail.com';
     }
 
