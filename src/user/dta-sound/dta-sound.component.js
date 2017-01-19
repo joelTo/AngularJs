@@ -5,16 +5,30 @@ class SoundController{
     constructor(){}
 
     $onInit(){
-            this.audio = new Audio('http://192.168.99.41:1337/10415.mp3');
+        this.sounds = [
+            { url: 'http://localhost:1337/10415.mp3', title: 'SON 1' },
+            { url: 'http://localhost:1337/10415.mp3', title: 'SON 2' },
+            { url: 'http://localhost:1337/10415.mp3', title: 'SON 3' }
+        ];
     }
 
     $onChanges(changes){
-        
+        if (changes.sound && changes.sound.currentValue) {
+            this.audio = new Audio(changes.sound.currentValue.url);
+            this.title = changes.sound.currentValue.title;
+        }
     }
 
-    Play(){
-        this.audio.play();
+   toggle (title) {
+       console.log(title)
+       
+        // if (this.audio.paused) this.audio.play();
+        // else {
+        //     this.audio.pause();
+        //     this.audio.currentTime = 0;
+        //}
     }
+
 
     Delete(){
         this.onDelete;
@@ -26,7 +40,7 @@ class SoundController{
 export const DtaSound={
 
     bindings:{
-        audio:'<',
+        sounds:'<',
         onDelete: '&'
     },
 

@@ -26,13 +26,15 @@
         <button type="submit" class="btn btn-primary btn-sm">Add</button>
     </div>
 </div>
-
-<button
-        ng-click="$ctrl.Play()" 
-        type="button" class="sound-button">PLay
+<div>
+ 
         
-</button>
+        <button ng-repeat="sound in $ctrl.sounds track by $index " 
+        
+                ng-click=" $ctrl.toggle(pipi)" type="button" class="btn btn-lg btn-block">
+            
+            
+        </button>
 
-
-
+</div>
 </div>
