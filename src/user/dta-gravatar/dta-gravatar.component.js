@@ -1,24 +1,23 @@
-class DtaGravatarController{
-    constructor(){
-        console.log('DtaGravatarController : Je suis bien lancé');
+class DtaGravatarController {
+    constructor(){}
+
+    $onInit() {
+        //this.email = 'tmoyse@gmail.com';
     }
-        $onInit() {
-        this.email = 'joel.torib@gmail.com';
-        }
+
     hightlight() {
         this.hightlighted = !this.hightlighted;
     }
+}
 
-    }
+export const DtaGravatar = {
     
-
-
-export const DtaGravatar=
-{
     bindings: {
-        email: '@'
+        email: '<'
     },
 
-     template: require('./dta-gravatar.component.html'),
-     controller : DtaGravatarController
+    template: require('./dta-gravatar.component.html'),
+
+    controller: DtaGravatarController
+
 };

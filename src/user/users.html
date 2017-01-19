@@ -7,20 +7,20 @@
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th><a ng-class="{ up: ctrl.predicat === 'name' && !ctrl.reverse, down: ctrl.predicat === 'name' && ctrl.reverse}"
                     href="" ng-click="ctrl.sort('name')">Nom</a></th>
                 <th><a ng-class="{ up: ctrl.predicat === 'age' && !ctrl.reverse, down: ctrl.predicat === 'age' && ctrl.reverse}"
                     href="" ng-click="ctrl.sort('age')">Age</a></th>
-                <th>Email</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <tr ng-class="{ delete: ctrl.undo[user.id] }"
                 ng-repeat="user in ctrl.users | filter:query | orderBy:ctrl.predicat:ctrl.reverse track by $index">
+                <td><dta-gravatar email="user.email"></dta-gravatar></td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.age }}</td>
-                <td><dta-gravatar email="user.email"></dta-gravatar></td>
                 <td style="text-align:right" ng-if="!ctrl.undo[user.id]">
                     <a ng-href="/user/{{ user.id }}" class="btn btn-default">Editer</a>
                     <button ng-click="ctrl.deleteUser(user)" class="btn btn-default">Supprimer</button>
