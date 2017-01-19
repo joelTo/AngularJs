@@ -7,13 +7,8 @@ class DtaGravatarController {
         this.md5 = md5(this.email || '');
     }
 
-    hightlight() {
-        this.hightlighted = !this.hightlighted;
-        console.log(this.onDeactivate);
-    }
-
-    deact(){
-        this.onDeactivate(); // equivalent d'un ng-click
+    deact() {
+        this.onDeactivate();
     }
 }
 
@@ -21,7 +16,7 @@ export const DtaGravatar = {
     
     bindings: {
         email: '<',
-        onDeactivate:'&'
+        onDeactivate: '&'
     },
 
     template: require('./dta-gravatar.component.html'),

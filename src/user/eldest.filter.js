@@ -9,6 +9,11 @@ export function EldestFilter () {
 
         return max.name;
 
+        // const eldest = users.reduce((max, user) => {
+        //     if (user.age && user.age > max.age) return user;
+        //     return max;
+        // }, {name: '', age: 0});
 
+        // return eldest.name;
     }
 }
