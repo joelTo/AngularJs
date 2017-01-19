@@ -13,7 +13,7 @@ class DtaGravatarController {
     }
 
     deact(){
-        this.onDeactivate();
+        this.onDeactivate(); // equivalent d'un ng-click
     }
 }
 
