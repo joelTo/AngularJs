@@ -18,7 +18,15 @@
         <tbody>
             <tr ng-class="{ delete: ctrl.undo[user.id] }"
                 ng-repeat="user in ctrl.users | filter:query | orderBy:ctrl.predicat:ctrl.reverse track by $index">
-                <td><dta-gravatar email="user.email"></dta-gravatar></td>
+                
+                <td>
+                
+                    <dta-gravatar
+                        on-deactivate="ctrl.deactivate()" 
+                        email="user.email"></dta-gravatar>
+                
+                </td>
+                
                 <td>{{ user.name }}</td>
                 <td>{{ user.age }}</td>
                 <td style="text-align:right" ng-if="!ctrl.undo[user.id]">
@@ -40,9 +48,6 @@
     </table>
 
 <div>
-
-    <dta-user color="red"></dta-user>
-    <dta-user color="green"></dta-user>
 
 </div>
 

@@ -1,5 +1,7 @@
-<div 
-    ng-class="{ highligted: $ctrl.hightlighted }" 
-    ng-click="$ctrl.hightlight()">
-   <img src="{{ $ctrl.gravatar }}">
+<div>
+    <img ng-src="https://www.gravatar.com/avatar/{{ $ctrl.md5 }}">
+    <br>
+    <button 
+    ng-click="$ctrl.deact()"
+    type="button" class="btn">STOP</button>
 </div>
