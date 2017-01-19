@@ -17,6 +17,8 @@ export default angular.module('UserModule', [
 
 .service('UserService', UserService)
 
+.component('dtaGravatar', DtaGravatar)
+
 .config(function($routeProvider) {
 
     $routeProvider
@@ -43,6 +45,5 @@ export default angular.module('UserModule', [
   }
 })
 
-.component('dtaGravatar', DtaGravatar)
 
 .name;
