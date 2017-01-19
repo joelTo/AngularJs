@@ -1,1 +1,5 @@
-<div>{{$ctrl.email}}</div>
+<div 
+    ng-class="{ highligted: $ctrl.hightlighted }" 
+    ng-click="$ctrl.hightlight()">
+    {{ $ctrl.email }}
+</div>
