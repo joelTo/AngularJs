@@ -15,6 +15,10 @@ class DtaGravatarController{
 
 export const DtaGravatar=
 {
+    bindings: {
+        email: '@'
+    },
+
      template: require('./dta-gravatar.component.html'),
      controller : DtaGravatarController
 };
