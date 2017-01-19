@@ -12,7 +12,6 @@ class SoundButtonController {
             this.audio = new Audio(changes.sound.currentValue.url);
             this.title = changes.sound.currentValue.title || changes.sound.currentValue.url.split('/').pop();
             this.audio.onended = () => this.$scope.$apply();
-            this.audio.playbackRate = 2;
         }
     }
 
@@ -55,7 +54,8 @@ export const SoundButton = {
             {{ $ctrl.title }}
         </button>
 
-        <input type="range">
+        <input type="range" class="form-control" ng-model="$ctrl.audio.playbackRate" min="0" max="2" step=".1">
+        {{$ctrl.audio.playbackRate}}
     `,
 
     controller: SoundButtonController

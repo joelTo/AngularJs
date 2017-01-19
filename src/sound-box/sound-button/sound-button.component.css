@@ -6,7 +6,7 @@ sound-button {
     padding: 2.5em 1em 1em 1em;
     margin: 2em;
     border-radius: 1em;
-    background: purple;
+    background: darkred;
     color: #fff;
 }
 
@@ -15,7 +15,7 @@ sound-button button {
 }
 
 sound-button button.close {
-    color: #fff;
+    color:black;
     opacity: 1;
     position: absolute;
     top: 3px;
