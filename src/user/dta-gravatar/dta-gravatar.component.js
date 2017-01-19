@@ -1,8 +1,12 @@
 class DtaGravatarController{
     constructor(){
         console.log('DtaGravatarController : Je suis bien lancé');
+
+        $onInit() {
         this.email = 'joel.torib@gmail.com';
+        }
     }
+    
 }
 
 export const DtaGravatar=
