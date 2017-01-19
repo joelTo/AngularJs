@@ -1,12 +1,12 @@
 class DtaGravatarController{
     constructor(){
-        console.log('DtaGravatarController toto');
+        console.log('DtaGravatarController : Je suis bien lancé');
+        this.email = 'joel.torib@gmail.com';
     }
 }
 
 export const DtaGravatar=
 {
-     template: '<div>Bientôt ici un gravatar</div>',
-
+     template: require('./dta-gravatar.component.html'),
      controller : DtaGravatarController
 };
