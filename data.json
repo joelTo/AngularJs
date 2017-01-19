@@ -1,62 +1,22 @@
 {
   "users": [
     {
-      "name": "detele",
-      "age": 22,
-      "id": 4
-    },
-    {
-      "name": "s",
-      "age": 18,
-      "addUserInfo": true,
-      "id": 6
-    },
-    {
-      "name": "dze",
-      "age": 18,
-      "addUserInfo": true,
-      "id": 8
-    },
-    {
-      "name": "nico",
-      "age": 18,
-      "addUserInfo": true,
-      "id": 11
-    },
-    {
-      "name": "d",
-      "age": 16,
-      "id": 15
-    },
-    {
-      "name": "sx",
-      "age": 3,
-      "id": 19
-    },
-    {
-      "name": "pap1",
-      "age": 87,
-      "id": 23
-    },
-    {
-      "name": "papi",
-      "age": 87,
-      "id": 24
+      "name": "John Doe",
+      "age": 10,
+      "id": 21,
+      "email": "tmoyse@gmail.com"
     },
     {
       "name": "John Doe",
       "age": 10,
-      "id": 25
+      "id": 22,
+      "email": "prepontkevin@gmail.com"
     },
     {
-      "name": "John Doe2",
+      "name": "John Doe",
       "age": 10,
-      "id": 26
-    },
-    {
-      "name": "John Doe3",
-      "age": 10,
-      "id": 27
+      "id": 23,
+      "email": "naholyr@gmail.com"
     }
   ]
 }
