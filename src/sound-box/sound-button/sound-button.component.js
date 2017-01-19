@@ -10,6 +10,11 @@ class SoundButtonController {
             this.audio = new Audio(changes.sound.currentValue.url);
             this.audio.loop = true;
             this.title = changes.sound.currentValue.title || changes.sound.currentValue.url.split('/').pop();
+
+            this.audio.onended = () =>  {
+                console.log('ended')
+            }
+
         }
     }
 
