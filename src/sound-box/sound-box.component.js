@@ -5,10 +5,10 @@ class SoundBoxController {
 
     $onInit() {
         this.sounds = [
-            { url: 'http://localhost:1337/10415.mp3', title: 'SON 1' },
-            { url: 'http://localhost:1337/3634.mp3', title: 'SON 2' },
-            { url: 'http://localhost:1337/4072.mp3', title: 'SON 3' },
-            { url: 'http://localhost:1337/clap-slapper.wav' }
+            { url: 'http://192.168.99.41:1337/10425.mp3', title: 'SON 1' },
+            { url: 'http://192.168.99.41:1337/4072.mp3', title: 'SON 2' },
+            { url: 'http://192.168.99.41:1337/hihat-dist02.wav', title: 'SON 3' },
+            { url: 'http://192.168.99.41:1337/openhat-tight.wav',title: 'SON 4' }
         ];
     }
 

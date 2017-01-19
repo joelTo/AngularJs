@@ -12,6 +12,7 @@ class SoundButtonController {
             this.audio = new Audio(changes.sound.currentValue.url);
             this.title = changes.sound.currentValue.title || changes.sound.currentValue.url.split('/').pop();
             this.audio.onended = () => this.$scope.$apply();
+            this.audio.playbackRate = 2;
         }
     }
 
@@ -53,6 +54,8 @@ export const SoundButton = {
             <span ng-class="{ 'ion-ios-play': $ctrl.audio.paused, 'ion-ios-pause': !$ctrl.audio.paused }"></span>
             {{ $ctrl.title }}
         </button>
+
+        <input type="range">
     `,
 
     controller: SoundButtonController
