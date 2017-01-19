@@ -36,11 +36,14 @@ export default angular.module('UserModule', [
     require: "ngModel",
     link: function(scope, element, attrs, ngModelCtrl) {
       ngModelCtrl.$validators.major = function(value) {
-        console.log('ici', value)
         return value >= 18;
       };
     }
   }
+})
+
+.component('dtaGravatar', {
+  template: '<div>Bientôt ici un gravatar</div>'
 })
 
 .name;
