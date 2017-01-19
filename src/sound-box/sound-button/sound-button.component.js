@@ -1,20 +1,17 @@
 import css from './sound-button.component.css';
 
 class SoundButtonController {
-    constructor () {}
+    constructor ($scope) {
+        this.$scope = $scope;
+    }
 
     $onInit () {}
 
     $onChanges (changes) {
         if (changes.sound && changes.sound.currentValue) {
             this.audio = new Audio(changes.sound.currentValue.url);
-            this.audio.loop = true;
             this.title = changes.sound.currentValue.title || changes.sound.currentValue.url.split('/').pop();
-
-            this.audio.onended = () =>  {
-                console.log('ended')
-            }
-
+            this.audio.onended = () => this.$scope.$apply();
         }
     }
 
