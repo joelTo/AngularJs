@@ -7,6 +7,7 @@ import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { DtaGravatar } from './dta-gravatar/dta-gravatar.component';
 import { DtaUser } from './dta-user/dta-user.component';
+import { DtaSound } from './dta-sound/dta-sound.component';
 
 export default angular.module('UserModule', [
     ngRoute
@@ -20,6 +21,7 @@ export default angular.module('UserModule', [
 
 .component('dtaGravatar', DtaGravatar)
 .component('dtaUser', DtaUser)
+.component('dtaSound', DtaSound)
 
 .config(function($routeProvider) {
 
@@ -33,6 +35,9 @@ export default angular.module('UserModule', [
       template: require('./user.html'),
       controller: 'UserController',
       controllerAs: 'ctrl'
+    })
+    .when('/sound', {
+      template: require('./sound.html'),
     })
 })
 
