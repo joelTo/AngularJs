@@ -1,3 +1,38 @@
 <div> 
-    <h2>Je suis la </h2>
+    <h2>SoundBox Mafia</h2>
+</div>
+
+<div>
+
+<div class="box-perso" >
+ <div class="form-group">
+        <label for="name">Nom</label>
+        <input 
+            name="name" 
+            required
+            ng-maxlength="20"
+            id="name" type="text" class="form-control">
+        
+    </div>
+
+    <div class="form-group">
+        <label for="url">url</label>
+        <input 
+            name="url" 
+            id="url" type="text" class="form-control">
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary btn-sm">Add</button>
+    </div>
+</div>
+
+<button
+        ng-click="$ctrl.Play()" 
+        type="button" class="sound-button">PLay
+        
+</button>
+
+
+
 </div>
