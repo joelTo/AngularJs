@@ -6,8 +6,7 @@ export class UserController {
             .then(user => this.user = user);
     }
 
-    saveUser(form, user) {
-        if (form.$invalid) return;
+    saveUser(user) {
         this.UserService.saveUser(user)
             .then(() => this.$location.path('/users'));
     }
